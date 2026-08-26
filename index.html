@@ -1,7 +1,96 @@
-body {
-  background-image: url("pink-glitter.jpg");
-  background-repeat: repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Assignment Draft Hub</title>
+    <style>
+      :root { --ink: #4d1738; --paper: #fff9fc; --accent: #e0218a; --line: #f3b5d5; --soft: #fff0f8; --gold: #ffc84a; }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: linear-gradient(135deg, #ffc8e6, #f9a8d4 48%, #ffdcf0); color: var(--ink); font-family: Arial, Helvetica, sans-serif; line-height: 1.55; }
+      main { max-width: 1080px; margin: 40px auto; padding: 42px; background: var(--paper); box-shadow: 0 10px 32px #86114c38; border-radius: 12px; }
+      h1 { font-size: clamp(2rem, 5vw, 3.6rem); line-height: 1.1; margin: 0 0 10px; }
+      .hero { position: relative; overflow: hidden; padding: 10px 0 18px; }
+      .hero::after { content: "✦  ♡  ✦"; position: absolute; right: 0; top: 3px; color: var(--accent); font-size: clamp(1.8rem, 5vw, 3.2rem); letter-spacing: .25em; animation: twinkle 2.8s ease-in-out infinite; }
+      .subtitle { margin: 0 0 28px; font-size: 1.1rem; color: #53636c; }
+      .note { margin: 28px 0; padding: 16px 18px; background: #ffe0f0; border-left: 5px solid #e0218a; border-radius: 4px; }
+      details { margin-top: 18px; border: 1px solid var(--line); border-radius: 10px; background: #fff; overflow: hidden; }
+      details[open] { border-color: var(--accent); box-shadow: 0 6px 22px #e0218a1c; }
+      summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 20px 24px; cursor: pointer; list-style: none; }
+      summary::-webkit-details-marker { display: none; }
+      summary::after { content: '+'; display: grid; place-items: center; flex: 0 0 28px; width: 28px; height: 28px; border-radius: 50%; color: white; background: var(--accent); font-size: 1.35rem; line-height: 1; }
+      details[open] summary { border-bottom: 1px solid var(--line); background: #fff0f8; }
+      details[open] summary::after { content: '–'; }
+      .section-content { padding: 6px 24px 24px; }
+      h2 { margin: 0 0 8px; font-size: 1.45rem; }
+      .prompt { color: #56666e; margin-top: 0; }
+      .answer { min-height: 180px; padding: 15px; border: 2px dashed #b8c2c3; border-radius: 6px; background: var(--soft); color: #263b47; white-space: pre-wrap; }
+      .answer:focus { outline: none; border-color: var(--accent); background: #fff; }
+      .hint { font-size: .9rem; color: #64727a; }
+      footer { padding-top: 24px; color: #64727a; font-size: .9rem; }
+      @keyframes twinkle { 50% { transform: scale(1.12) rotate(8deg); opacity: .65; } }
+      @media (max-width: 600px) { main { margin: 0; min-height: 100vh; border-radius: 0; padding: 24px 18px; } summary { padding: 17px; } .section-content { padding-inline: 17px; } }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="hero"><h1>First Homework Assignment</h1>
+      <p class="subtitle">Ava Traill’s private draft space for organizing her own response.</p></div>
+
+      <aside class="note"><strong>How to use this:</strong> Click a question to open it, then type your own notes or draft into its box. Your text is saved only in this browser on this device.</aside>
+
+      <details id="informed-user">
+        <summary><h2>1. What is an informed user?</h2></summary>
+        <div class="section-content">
+        <p class="prompt">Define the idea in your own words and connect it to the chapter.</p>
+        <div class="answer" contenteditable="true" data-key="informed-user" role="textbox" aria-label="Draft for informed user">Write your response here…</div>
+        </div>
+      </details>
+      <details id="choice">
+        <summary><h2>2. Do you want to be an informed user?</h2></summary>
+        <div class="section-content">
+        <p class="prompt">Explain your position and the reasons behind it.</p>
+        <div class="answer" contenteditable="true" data-key="choice" role="textbox" aria-label="Draft for your perspective">Write your response here…</div>
+        </div>
+      </details>
+      <details id="constant-call">
+        <summary><h2>3. What does “constant call” mean?</h2></summary>
+        <div class="section-content">
+        <p class="prompt">Describe the concept and your reaction to it.</p>
+        <div class="answer" contenteditable="true" data-key="constant-call" role="textbox" aria-label="Draft for constant call">Write your response here…</div>
+        </div>
+      </details>
+      <details id="employer">
+        <summary><h2>4. Viewpoint: the employer</h2></summary>
+        <div class="section-content">
+        <p class="prompt">Consider expectations, availability, and the organization’s needs.</p>
+        <div class="answer" contenteditable="true" data-key="employer" role="textbox" aria-label="Draft for employer viewpoint">Write your response here…</div>
+        </div>
+      </details>
+      <details id="employee">
+        <summary><h2>5. Viewpoint: the employee on call</h2></summary>
+        <div class="section-content">
+        <p class="prompt">Consider boundaries, wellbeing, flexibility, and work/life balance.</p>
+        <div class="answer" contenteditable="true" data-key="employee" role="textbox" aria-label="Draft for employee viewpoint">Write your response here…</div>
+        </div>
+      </details>
+      <details id="sources">
+        <summary><h2>6. Research &amp; sources</h2></summary>
+        <div class="section-content">
+        <p class="prompt">Keep links, quotations you plan to paraphrase, and citation details here.</p>
+        <div class="answer" contenteditable="true" data-key="sources" role="textbox" aria-label="Research notes and sources">Add your sources and notes here…</div>
+        </div>
+      </details>
+
+      <footer>Tip: Copy your finished writing into the format your instructor requires before submitting.</footer>
+    </main>
+    <script>
+      document.querySelectorAll('[contenteditable]').forEach((box) => {
+        const saved = localStorage.getItem(`assignment-draft-${box.dataset.key}`);
+        if (saved) box.textContent = saved;
+        box.addEventListener('focus', () => { if (box.textContent.includes('Write your response here') || box.textContent.includes('Add your sources')) box.textContent = ''; }, { once: true });
+        box.addEventListener('input', () => localStorage.setItem(`assignment-draft-${box.dataset.key}`, box.textContent));
+      });
+    </script>
+  </body>
+</html>
